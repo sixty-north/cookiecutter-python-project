@@ -1,0 +1,10 @@
+{
+    "project_name": "fashion_aggregator",
+    "short_description": "a fashion aggregator",
+    "author": "Sixty North AS",
+    "email_address": "name@host.com",
+    "license": ["MIT", "GNU GPL v3.0"],
+    "project_url": "github.com/sixty-north/project-name",
+    "version": "0.0.0a0",
+    "year": "2017"
+}
