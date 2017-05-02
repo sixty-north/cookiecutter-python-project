@@ -23,15 +23,10 @@ def find_version(*file_paths):
 
 long_description = read('README.md', mode='rt')
 
-
-INSTALL_REQUIRES = [
-    # Add installation requirements here
-]
-
 setup(
     name='{{cookiecutter.project_name}}',
     version=find_version('{{cookiecutter.project_name}}/version.py'),
-    packages=find_packages(),
+    packages=find_packages(exclude=['contrib', 'docs', 'test*']),
 
     author='{{cookiecutter.author}}',
     author_email='{{cookiecutter.email_address}}',
@@ -43,10 +38,19 @@ setup(
         'Development Status :: 3 - Alpha',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 3 :: Only',
     ],
     platforms='any',
     include_package_data=True,
-    install_requires=INSTALL_REQUIRES,
+    install_requires=[],
+    # List additional groups of dependencies here (e.g. development
+    # dependencies). You can install these using the following syntax, for
+    # example: $ pip install -e .[dev,test]
+    extras_require={
+        # 'dev': ['check-manifest', 'wheel'],
+        # 'doc': ['sphinx', 'cartouche'],
+        'test': ['hypothesis', 'pytest'],
+    },
     entry_points={
         # 'console_scripts': [
         #    '{{cookiecutter.project_name}} = {{cookiecutter.project_name}}.cli:main',
