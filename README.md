@@ -3,5 +3,5 @@ A [cookiecutter](https://github.com/audreyr/cookiecutter) template for creating 
 Basic usage:
 
 ```
-cookiecutter gh:sixty-north/cookiecutter-python-package
+cookiecutter gh:sixty-north/cookiecutter-python-project
 ```
