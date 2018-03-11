@@ -25,8 +25,8 @@ long_description = read('README.rst', mode='rt')
 
 setup(
     name='{{cookiecutter.project_name}}',
-    version=find_version('{{cookiecutter.project_name}}/version.py'),
-    packages=find_packages(exclude=['contrib', 'docs', 'test*']),
+    version=find_version('src/{{cookiecutter.project_name}}/version.py'),
+    packages=find_packages('src'),
 
     author='{{cookiecutter.author}}',
     author_email='{{cookiecutter.email_address}}',
@@ -42,6 +42,9 @@ setup(
     ],
     platforms='any',
     include_package_data=True,
+    package_dir={'{{cookiecutter.project_name}}':
+                 'src/{{cookiecutter.project_name}}'},
+    # package_data={'{{cookiecutter.project_name}}': . . .},
     install_requires=[],
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax, for
