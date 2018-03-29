@@ -1,7 +1,12 @@
 import io
 import os
-import re
 from setuptools import setup, find_packages
+
+
+def local_file(*name):
+    return os.path.join(
+        os.path.dirname(__file__),
+        *name)
 
 
 def read(*names, **kwargs):
@@ -12,20 +17,24 @@ def read(*names, **kwargs):
         return fp.read()
 
 
-def find_version(*file_paths):
-    version_file = read(*file_paths)
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
-                              version_file, re.M)
-    if version_match:
-        return version_match.group(1)
-    raise RuntimeError("Unable to find version string.")
+def read_version():
+    """Read the `(version-string, version-info)` from
+    `src/{{cookiecutter.project_name}}/version.py`.
+    """
+
+    version_file = local_file(
+        'src', '{{cookiecutter.project_name}}', 'version.py')
+    local_vars = {}
+    with open(version_file) as handle:
+        exec(handle.read(), {}, local_vars)  # pylint: disable=exec-used
+    return (local_vars['__version__'], local_vars['__version_info__'])
 
 
-long_description = read('README.rst', mode='rt')
+long_description = read(local_file('README.rst'), mode='rt')
 
 setup(
     name='{{cookiecutter.project_name}}',
-    version=find_version('src/{{cookiecutter.project_name}}/version.py'),
+    version=read_version()[0],
     packages=find_packages('src'),
 
     author='{{cookiecutter.author}}',
