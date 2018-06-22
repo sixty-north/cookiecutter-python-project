@@ -51,8 +51,7 @@ setup(
     ],
     platforms='any',
     include_package_data=True,
-    package_dir={'{{cookiecutter.project_name}}':
-                 'src/{{cookiecutter.project_name}}'},
+    package_dir={'': 'src'},
     # package_data={'{{cookiecutter.project_name}}': . . .},
     install_requires=[],
     # List additional groups of dependencies here (e.g. development
