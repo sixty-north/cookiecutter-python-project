@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 setup(
     name='{{cookiecutter.project_name}}',
     version="{{cookiecutter.version}}",
-    packages=find_packages('src'),
+    packages=find_packages('source'),
 
     author='{{cookiecutter.author}}',
     author_email='{{cookiecutter.email_address}}',
@@ -21,7 +21,7 @@ setup(
     ],
     platforms='any',
     include_package_data=True,
-    package_dir={'': 'src'},
+    package_dir={'': 'source'},
     # package_data={'{{cookiecutter.project_name}}': . . .},
     install_requires=[],
     # List additional groups of dependencies here (e.g. development
