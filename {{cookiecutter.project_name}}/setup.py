@@ -26,7 +26,7 @@ setup(
     install_requires=[],
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax, for
-    # example: $ pip install -e .[dev,test]
+    # example: $ pip install -e ".[dev,test]"
     extras_require={
         'dev': ['black', 'bump2version'],
         # 'doc': ['sphinx', 'cartouche'],
