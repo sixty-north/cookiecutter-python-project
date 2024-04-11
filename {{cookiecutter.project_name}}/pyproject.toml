@@ -24,6 +24,12 @@ test = ["pytest"]
 [project.urls]
 repository = "{{cookiecutter.project_url}}"
 
+[tool.setuptools.dynamic]
+version = { attr = "{{cookiecutter.project_name}}.version.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["source"]
+
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
