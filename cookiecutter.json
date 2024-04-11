@@ -1,8 +1,9 @@
 {
     "project_name": "fashion_aggregator",
     "short_description": "a fashion aggregator",
+    "author": "Sixty North AS",
     "license": ["MIT", "GNU GPL v3.0", "Proprietary"],
-    "project_url": "http://github.com/sixty-north/project-name",
+    "project_url": "http://bitbucket.org/sixty-north/project-name",
     "version": "0.0.0",
     "year": "2024"
 }

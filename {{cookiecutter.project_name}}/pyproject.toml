@@ -3,7 +3,7 @@ name = "{{cookiecutter.project_name}}"
 # requires-python = ">= 3.11"
 dynamic = ["version"]
 authors = [
-    { name = "Sixty North AS", email = "systems+{{cookiecutter.project_name}}@sixty-north.com" },
+    { name = "{{cookiecutter.author}}", email = "systems+{{cookiecutter.project_name}}@sixty-north.com" },
 ]
 description = "{{cookiecutter.short_description}}"
 readme = { file = "README.md", content-type = "text/markdown" }
